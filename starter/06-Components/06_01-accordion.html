@@ -28,17 +28,39 @@
         color: #284945;
       }
 
+      /* 📌 default style of accordion */
       .accordion {
         width: 700px;
         margin: 100px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
       }
+
       .item {
+        box-shadow: 0px 0px 32px rgb(0, 0, 0, 0.1);
+        padding: 24px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        column-gap: 24px;
+        row-gap: 32px;
+        align-items: center;
+        /* text-align: center; */
       }
+
       .number,
       .text {
         font-size: 24px;
         font-weight: 500;
-        color: #087f5b;
+
+        /* by default */
+        /* color: #087f5b; */
+        /* text-align: center; */
+      }
+
+      .number {
+        /* by default */
+        color: #ced4da;
       }
 
       .icon {
@@ -47,24 +69,127 @@
         stroke: #284945;
       }
 
+      .hidden-box {
+        grid-column: 2;
+
+        /* by default */
+        display: none;
+      }
+
       .hidden-box p {
         line-height: 1.6;
         margin-bottom: 24px;
       }
 
-      .hidden-box ul {
+      .hidden-box ul.vertical {
         color: #868e96;
         margin-left: 20px;
+        margin-bottom: 24px;
 
+        /* align center vertically */
         display: flex;
         flex-direction: column;
         gap: 12px;
+        align-items: center;
+      }
+
+      .hidden-box ul.horizontal {
+        color: #868e96;
+        margin-left: 20px;
+        margin-bottom: 24px;
+
+        /* align center horizontally */
+        display: flex;
+        /* flex-direction: column; */
+        gap: 12px;
+        line-height: 1.6;
+        align-items: center;
+      }
+
+      /* 📌 when accordion is openned */
+      .open {
+        border-top: 4px solid #087f5b;
+      }
+
+      .open .hidden-box {
+        display: block;
+      }
+
+      .open .number,
+      .open .text {
+        color: #087f5b;
       }
     </style>
   </head>
   <body>
+    <!-- accodion 1 -->
     <div class="accordion">
       <div class="item">
+        <p class="number">01</p>
+        <p class="text">Where are these chairs assembled?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="icon"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <div class="hidden-box">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate
+            officiis ut corporis fuga nostrum deleniti pariatur exercitationem
+            ipsam aliquid labore, perspiciatis ea doloremque quia suscipit
+            dolorem necessitatibus, veritatis adipisci. Cum corrupti, quam
+            veniam dolores neque libero natus quos aspernatur quod ullam
+            repudiandae earum delectus sint, odit amet optio est praesentium!
+          </p>
+          <ul class="horizontal">
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+          </ul>
+          <ul class="vertical">
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- accodion 2 -->
+      <div class="item open">
         <p class="number">02</p>
         <p class="text">How long do I have to return my chair</p>
         <svg
@@ -89,7 +214,90 @@
             veniam dolores neque libero natus quos aspernatur quod ullam
             repudiandae earum delectus sint, odit amet optio est praesentium!
           </p>
-          <ul>
+          <ul class="horizontal">
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+          </ul>
+          <ul class="vertical">
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- accodion 3 -->
+      <div class="item">
+        <p class="number">03</p>
+        <p class="text">Do you ship tp countries outside the EU?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="icon"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <div class="hidden-box">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate
+            officiis ut corporis fuga nostrum deleniti pariatur exercitationem
+            ipsam aliquid labore, perspiciatis ea doloremque quia suscipit
+            dolorem necessitatibus, veritatis adipisci. Cum corrupti, quam
+            veniam dolores neque libero natus quos aspernatur quod ullam
+            repudiandae earum delectus sint, odit amet optio est praesentium!
+          </p>
+          <ul class="horizontal">
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              quasi?
+            </li>
+          </ul>
+          <ul class="vertical">
             <li>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
               quasi?
